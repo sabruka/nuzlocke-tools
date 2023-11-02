@@ -30,6 +30,15 @@ class NuzlockeRun:
 5. If you encounter a pokemon you have already caught, {"you may ignore it and try to catch the next pokemon you encounter" if self._dupes_clause else "you must catch it"}.
 6. You may not use any items in battle.
 
+Your goals:
+
+1. Complete Victory Road [ ]
+2. Complete Path of Legends [ ]
+3. Complete Starfall Street [ ]
+4. Defeat Arven, Nemona, and Cassiopeia [ ]
+5. Complete The Way Home [ ]
+6. Complete the Academy Ace Tournament [ ]
+
 The pokemon selected for you are the following:
         """)
 
@@ -46,7 +55,7 @@ The pokemon selected for you are the following:
 
         for route, pokemon in selected_pokemon_by_route.items():
             if not self._secret or self._secret.lower() in route.lower():
-                print(f"    {route}: {pokemon}" if pokemon else f"{route}: None!")
+                print(f"    {route}: {str(pokemon).title()} [ ]" if pokemon else f"{route}: None!")
 
         print()
         print("Good luck!")
