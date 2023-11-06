@@ -4,11 +4,12 @@ from game import Game
 
 
 class NuzlockeRun:
-    def __init__(self, seed: str, game: Game, dupes_clause: bool = True, secret: str = None):
+    def __init__(self, seed: str, game: Game, dupes_clause: bool = True, secret: str = None, show_order: bool = False):
         self._seed = seed
         self._game = game
         self._dupes_clause = dupes_clause
         self._secret = secret
+        self._show_order = show_order
 
     def generate_run(self):
         """
@@ -56,6 +57,13 @@ The pokemon selected for you are the following:
         for route, pokemon in selected_pokemon_by_route.items():
             if not self._secret or self._secret.lower() in route.lower():
                 print(f"    {route}: {str(pokemon).title()} [ ]" if pokemon else f"{route}: None!")
+
+        if self._show_order:
+            print()
+            print("Here is a suggestion for route order, along with maximum level restrictions:")
+            path_and_max_levels = self._game.get_path_and_max_levels()
+            for path, max_level in path_and_max_levels:
+                print(f"    {path} (max level {max_level}) [ ]")
 
         print()
         print("Good luck!")
