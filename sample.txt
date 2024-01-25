@@ -1,0 +1,102 @@
+===== NUZLOCKE RULES =====
+
+1. If a pokemon faints, it is considered dead and must be released.
+2. You must give a nickname to every pokemon you catch.
+3. You may only catch the first pokemon you encounter on each route matching the one selected by the generator.
+    3.1 You may catch the pre-evolution of the pokemon selected by the generator for a specific route.
+4. If you fail to catch the first pokemon you encounter on a route, you may not catch any more pokemon on that route.
+5. You may not use any items in battle.
+
+Your goals:
+
+1. Complete Victory Road [ ]
+2. Complete Path of Legends [ ]
+3. Complete Starfall Street [ ]
+4. Defeat Arven, Nemona, and Cassiopeia [ ]
+5. Complete The Way Home [ ]
+6. Complete the Academy Ace Tournament [ ]
+
+The pokemon selected for you are the following:
+            
+        STARTER: Fuecoco [ ]
+        Alfornada Cavern: Gumshoos [ ]
+        Apple Hills: Mankey [ ]
+        Area Zero: Raichu [ ]
+        Asado Desert: Gumshoos [ ]
+        Canyon Biome: Hitmonchan [ ]
+        Casseroya Lake: Lunala [ ]
+        Chargestone Cavern: Joltik [ ]
+        Chilling Waterhead: Magikarp [ ]
+        Coastal Biome: Tentacool [ ]
+        Cortondo: Drifblim [ ]
+        Crystal Pool: Glimmora [ ]
+        Dalizapa Passage: Drifloon [ ]
+        Dreaded Den: Ogerpon [ ]
+        East Paldean Sea: Bruxish [ ]
+        East Province Area One: Steenee [ ]
+        East Province Area Three: Falinks [ ]
+        East Province Area Two: Flamigo [ ]
+        Fellhorn Gorge: Poliwag [ ]
+        Glaseado Mountain: Drifloon [ ]
+        Great Crater of Paldea: Rayquaza [ ]
+        Infernal Pass: Spoink [ ]
+        Inlet Grotto: Gumshoos [ ]
+        Kitakami Hall: Vulpix [ ]
+        Kitakami Road: Tandemaus [ ]
+        Kitakami Wilds: Vikavolt [ ]
+        Loyalty Plaza: Pecharunt [ ]
+        Mossfell Confluence: Petilil [ ]
+        North Paldean Sea: Qwilfish [ ]
+        North Province Area One: Rufflet [ ]
+        North Province Area Three: Espeon [ ]
+        North Province Area Two: Slaking [ ]
+        Oni Mountain: Carbink [ ]
+        Oni's Maw: Morpeko [ ]
+        Paradise Barrens: Poochyena [ ]
+        Poco Path: Zapdos [ ]
+        Pokemon League: Tarountula [ ]
+        Polar Biome: Crabominable [ ]
+        Reveler's Road: Piplup [ ]
+        Savanna Biome: Pyroar [ ]
+        Socarrat Trail: Sudowoodo [ ]
+        South Paldean Sea: Cloyster [ ]
+        South Province Area Five: Buizel [ ]
+        South Province Area Four: Sliggoo [ ]
+        South Province Area One: Murkrow [ ]
+        South Province Area Six: Klefki [ ]
+        South Province Area Three: Rookidee [ ]
+        South Province Area Two: Tadbulb [ ]
+        Tagtree Thicket: Pineco [ ]
+        Timeless Woods: Graveler [ ]
+        Torchlit Labyrinth: Happiny [ ]
+        West Paldean Sea: Eelektrik [ ]
+        West Province Area One: Bronzor [ ]
+        West Province Area Three: Sudowoodo [ ]
+        West Province Area Two: Drednaw [ ]
+        Wistful Fields: Pawniard [ ]
+
+Recommended level caps are the following:
+        Cortando Gym (Bug): 16
+        Rock Path of Legends: 17
+        Artazin Gym (Grass): 18
+        Flying Path of Titans: 20
+        Dark Team Star Base: 22
+        Levincia Gym (Electric): 26
+        Fire Team Star Base: 29
+        Steel Path of Titans: 30
+        Cascarrafa Gym (Water): 32
+        Poison Team Star Base: 34
+        Medali Gym (Normal): 39
+        Montenevera Gym (Ghost): 45
+        Ground Path of Titans: 47
+        Alfornada Gym (Psychic): 48
+        Glaseado Gym (Ice): 51
+        Fairy Team Star Base: 54
+        Fighting Team Star Base: 60
+        Pre-boss Team Star: 65
+        Boss Team Star: 67
+        Path of Titans Final Fight: 67
+        Elite Four: 71
+
+Good luck!
+
