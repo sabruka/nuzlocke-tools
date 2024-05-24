@@ -5,7 +5,8 @@ from pokemon import Pokemon
 
 
 class NuzlockeRun:
-    def __init__(self, seed: str, prevent_dupes: bool = True, show_order: bool = False, allow_legendaries: bool = False):
+    def __init__(self, content_file: str, seed: str, prevent_dupes: bool = True, show_order: bool = False, allow_legendaries: bool = False):
+        self._content_file = content_file
         self._seed = seed
         self._prevent_dupes = prevent_dupes
         self._show_order = show_order
@@ -13,8 +14,7 @@ class NuzlockeRun:
 
     def generate_run(self):
         print(f"Generating run for seed {self._seed}...")
-        # TODO Set data file in setting somewhere.
-        with open('./pokemon.data', 'rb') as file:
+        with open(f'./{self._content_file}', 'rb') as file:
             pokemon: [Pokemon] = pickle.load(file)
             print(f"Found {len(pokemon)} possible pokemon.")
 

@@ -14,23 +14,26 @@ def cli():
 
 
 @click.command()
+@click.option("-f", "--file", "file", default="pokemon.data", help="The file to read the pokemon data from.")
 @click.option("-s", "--seed", "seed", default=uuid.uuid4().hex, help="The seed to use to generate the run.")
 @click.option("--allow-dupes", "allow_dupes", is_flag=True, default=False, help="Allow duplicate pokemon to be caught.")
 @click.option("-o", "--order", "show_order", is_flag=True, default=False, help="Also print out the order of things to accomplish, along with suggested max. level restrictions.")
-def generate(seed: str, allow_dupes: bool, show_order: bool):
+def generate(file: str, seed: str, allow_dupes: bool, show_order: bool):
     """
     Generates a new Nuzlocke run.
     """
     click.echo(f"Running generate_run with seed={seed}")
-    NuzlockeRun(seed=seed, prevent_dupes=not allow_dupes, show_order=show_order).generate_run()
+    NuzlockeRun(content_file=file, seed=seed, prevent_dupes=not allow_dupes, show_order=show_order).generate_run()
 
 
 @click.command()
-def scrape():
+@click.option("-d", "--delete", "delete", is_flag=True, help="Delete the existing pokemon data file.")
+@click.option("-f", "--file", "file", default="pokemon.data", help="The file to store the pokemon data in.")
+def scrape(delete: bool, file: str):
     """
     Extracts data from the internet about Pokemon and stores them in a file used for Nuzlocke runs.
     """
-    scrape_mons()
+    scrape_mons(delete, file)
 
 
 @click.command()

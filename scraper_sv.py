@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup
 from pokemon import Pokemon
 
 POKEMON_LIST_REGEX = r"(?<=\>)\d+ \w+(?=\<\/option\>)"
-DATA_FILE = "./pokemon.data"
 SCRAPE_DELAY_IN_MS = 0
 
 TEST_POKEMON_NAME = None
@@ -19,15 +18,13 @@ def _millis_ts() -> int:
     return int(time.time() * 1000)
 
 
-def scrape_mons():
-    if os.path.isfile(DATA_FILE):
-        print(f"File {DATA_FILE} already exists, please delete the file manually before scraping again.")
-        mons = find_mons()
-        pokemon = []
-        for mon in mons:
-            pokemon.append(Pokemon(mon[0], mon[1]))
-        final_adjustments(pokemon)
-        return
+def scrape_mons(delete: bool, file: str):
+    if os.path.isfile(file):
+        if not delete:
+            print(f"File {file} already exists, please delete the file manually before scraping again.")
+            return
+        else:
+            os.remove(file)
 
     start = _millis_ts()
     print(f"Finding mons for Scarlet & Violet...")
