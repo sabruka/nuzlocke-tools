@@ -24,6 +24,7 @@ def scrape_mons(delete: bool, file: str):
             print(f"File {file} already exists, please delete the file manually before scraping again.")
             return
         else:
+            print(f"Deleting file {file} before scraping...")
             os.remove(file)
 
     start = _millis_ts()
@@ -66,12 +67,13 @@ def scrape_mons(delete: bool, file: str):
     backfill_regions(pokemon)
     final_adjustments(pokemon)
 
-    save_mon_data(pokemon)
-    print(f"Mon data stored successfully in {DATA_FILE}!")
+    save_mon_data(pokemon, file)
+    print(f"Mon data stored successfully in {file}!")
 
 
 def final_adjustments(pokemon: [Pokemon]):
     print("Making final adjustments to pokemon location lists...")
+    print("\tRemoving certain pokemon from certain locations...")
     # Remove Zapdos from Poco Path (a bit unfair, innit?)
     _remove_from_location(pokemon, "Zapdos", "Poco Path")
 
@@ -87,17 +89,19 @@ def final_adjustments(pokemon: [Pokemon]):
     )]
     for p in pokemon:
         if p.get_name() in links:
+            print(f"\t\t{p.get_name()} marked as legendary.")
             p.set_legendary()
 
 
 def _remove_from_location(pokemon: [Pokemon], mon_name: str, location: str):
+    print(f"\t\tRemoving {mon_name} from {location}.")
     poke = [p for p in pokemon if p.get_name() == mon_name][0]
     if location in poke._locations:
         poke._locations.remove(location)
 
 
-def save_mon_data(pokemon: list[Pokemon]):
-    with open(DATA_FILE, 'wb') as file:
+def save_mon_data(pokemon: list[Pokemon], file: str):
+    with open(file, 'wb') as file:
         pickle.dump(pokemon, file, pickle.HIGHEST_PROTOCOL)
 
 

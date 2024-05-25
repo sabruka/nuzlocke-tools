@@ -106,6 +106,9 @@ The pokemon selected for you are the following:
 
     def _cleanup_locations(self, location_list):
         # Some locations are bugged or are scrapped incorrectly.
-        location_list.remove("Alfornado Cavern")  # Groudon is incorrectly set in this non-existent cavern.
-        location_list.remove("PokÃ©mon League")  # Incorrect spelling of Pokemon League.
-        location_list.remove(" Savanna BiomeFixed: Savanna Biome") # ???
+        if "Alfornado Cavern" in location_list:
+            location_list.remove("Alfornado Cavern")  # Groudon is incorrectly set in this non-existent cavern.
+        if "PokÃ©mon League" in location_list:
+            location_list.remove("PokÃ©mon League")  # Incorrect spelling of Pokemon League.
+        if "Victory Road" in location_list:
+            location_list.remove(" Savanna BiomeFixed: Savanna Biome") # ???

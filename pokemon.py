@@ -1,8 +1,7 @@
 class Pokemon:
-    def __init__(self, national_dex_number: int, name: str, family: str = None, legendary: bool = False):
+    def __init__(self, national_dex_number: int, name: str, legendary: bool = False):
         self._national_dex_number = national_dex_number
         self._name = name
-        self._family = family or name
         self._locations = []
         self._is_legendary = False
 
@@ -23,6 +22,14 @@ class Pokemon:
             self._locations.append(route)
             return True
         return False
+
+    def remove_location(self, route: str):
+        if route in self._locations:
+            self._locations.remove(route)
+
+    def add_locations(self, routes: [str]):
+        for route in routes:
+            self.add_location(route)
 
     def is_in_location(self, route: str) -> bool:
         return route in self._locations

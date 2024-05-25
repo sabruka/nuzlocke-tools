@@ -3,9 +3,10 @@ import uuid
 
 import click as click
 
+import bulbapedia_scraper_sv
+import serebii_scraper_sv
 from nuzlocke import NuzlockeRun
 from pokemon import Pokemon
-from scraper_sv import scrape_mons
 
 
 @click.group()
@@ -29,11 +30,15 @@ def generate(file: str, seed: str, allow_dupes: bool, show_order: bool):
 @click.command()
 @click.option("-d", "--delete", "delete", is_flag=True, help="Delete the existing pokemon data file.")
 @click.option("-f", "--file", "file", default="pokemon.data", help="The file to store the pokemon data in.")
-def scrape(delete: bool, file: str):
+@click.option("-s", "--source", "source", type=click.Choice(["serebii", "bulbapedia"]), default="serebii", help="The source to scrape from.")
+def scrape(delete: bool, file: str, source):
     """
     Extracts data from the internet about Pokemon and stores them in a file used for Nuzlocke runs.
     """
-    scrape_mons(delete, file)
+    if source == "serebii":
+        serebii_scraper_sv.scrape_mons(delete, file)
+    elif source == "bulbapedia":
+        bulbapedia_scraper_sv.scrape_mons(delete, file)
 
 
 @click.command()
