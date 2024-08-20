@@ -102,6 +102,7 @@ def find_pokemon_per_location(locations) -> {str, list[str]}:
         pokemon_in_location = []
         # Loop until next h2 header.
         while pokemon_section.name != "h2":
+            pokemon_in_table = []
             if pokemon_section and pokemon_section.name == "table":
                 pokemon_in_table = list(set([a.text for a in pokemon_section.findAll('a') if (
                         a
@@ -128,7 +129,8 @@ def final_adjustments(pokemon: [Pokemon]):
     # Remove Zapdos from Poco Path (a bit unfair, innit?)
     _remove_from_location(pokemon, "Zapdos", "Poco Path")
     _remove_from_location(pokemon, "Squawkabilly", "Cabo Poco")
-
+    _remove_from_location(pokemon, "Spoink", "Poco Path")
+    
     print("\tRemoving unfair or unobtainable Pokémon...")
     _remove_pokemon(pokemon, "Ash-Greninja")
     _remove_pokemon(pokemon, "Bloodmoon Beast")
